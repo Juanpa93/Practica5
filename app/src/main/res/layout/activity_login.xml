@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/bienvenido_a_deudor_app"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"/>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/deudor"
+                android:layout_marginHorizontal="15dp"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/et_correoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/ingrese_correo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp"
+                android:layout_marginHorizontal="10dp"
+                tools:ignore="Autofill" />
+
+            <EditText
+                android:id="@+id/et_passwordLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:layout_gravity="center"
+                android:hint="@string/ingrese_contrase_a"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp"
+                android:layout_marginHorizontal="10dp"
+                tools:ignore="Autofill" />
+
+            <Button
+                android:id="@+id/bt_iniciarSesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iniciar_sesi_n"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:paddingHorizontal="7dp"
+                android:layout_marginBottom="5dp"
+                />
+            <Button
+                android:id="@+id/bt_registrarse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/registrarse"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

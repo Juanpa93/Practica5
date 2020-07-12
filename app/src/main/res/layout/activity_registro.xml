@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegistroActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:paddingVertical="5dp"
+            android:text="@string/registro"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:hint="@string/digite_nombre"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/et_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:hint="@string/digite_correo_electr_nico"
+            android:inputType="textEmailAddress"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/et_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:hint="@string/telefono"
+            android:inputType="phone"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            tools:ignore="Autofill" />
+
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:hint="@string/contrase_a"
+            android:inputType="textPassword"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/et_reppassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:gravity="center"
+            android:hint="@string/confirmar_contrase_a"
+            android:inputType="textPassword"
+            android:textColorHint="@color/gray"
+            android:textSize="13sp"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/bt_guardar_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:text="@string/guardar"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+</ScrollView>
+
