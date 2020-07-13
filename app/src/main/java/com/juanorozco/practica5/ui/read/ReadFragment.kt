@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.juanorozco.practica5.R
 import com.juanorozco.practica5.SesionROOM
-import com.juanorozco.practica5.model.DeudorDAO
+import com.juanorozco.practica5.model.local.DeudorDAO
 import kotlinx.android.synthetic.main.fragment_read.*
 
 class ReadFragment : Fragment() {

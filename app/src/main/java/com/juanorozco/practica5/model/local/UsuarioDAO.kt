@@ -1,6 +1,7 @@
-package com.juanorozco.practica5.model
+package com.juanorozco.practica5.model.local
 
 import androidx.room.*
+import com.juanorozco.practica5.model.local.Usuario
 
 
 @Dao

@@ -1,4 +1,4 @@
-package com.juanorozco.practica5.model
+package com.juanorozco.practica5.model.local
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

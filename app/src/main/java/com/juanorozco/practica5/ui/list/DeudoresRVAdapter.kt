@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.*
 import androidx.recyclerview.widget.RecyclerView
 import com.juanorozco.practica5.R
-import com.juanorozco.practica5.model.Deudor
+import com.juanorozco.practica5.model.local.Deudor
 import kotlinx.android.synthetic.main.item_deudor.view.*
 
 import kotlin.collections.ArrayList

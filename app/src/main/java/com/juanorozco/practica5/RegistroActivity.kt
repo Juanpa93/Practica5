@@ -1,15 +1,18 @@
 package com.juanorozco.practica5
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
-import com.juanorozco.practica5.model.Usuario
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.juanorozco.practica5.model.local.Usuario
 import kotlinx.android.synthetic.main.activity_registro.*
 import java.sql.Types.NULL
 import java.util.*
+
 
 class RegistroActivity : AppCompatActivity() {
     private var fecha : String = ""
@@ -20,29 +23,50 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.activity_registro)
+
+        val mAuth : FirebaseAuth = FirebaseAuth.getInstance()
+
         val usuarioDAO = SesionROOM.database2.UsuarioDAO()
 
         bt_guardar_r.setOnClickListener {
+
             val nombre = et_nombre.text.toString()
-            val correo = et_correo.text.toString()
+            val email = et_correo.text.toString()
             val telefono = et_telefono.text.toString()
-            val contrasena = et_password.text.toString()
+            val password = et_password.text.toString()
             val repcontrasena = et_reppassword.text.toString()
-            val usuario = Usuario(NULL, nombre, correo, telefono, contrasena)
+            val usuario = Usuario(
+                NULL,
+                nombre,
+                email,
+                telefono,
+                password
+            )
 
 
 
 
-            if (nombre.isNotEmpty() && correo.isNotEmpty() && telefono.isNotEmpty() && contrasena.isNotEmpty()) {
-                if (contrasena.length < 6) {
+            if (nombre.isNotEmpty() && email.isNotEmpty() && telefono.isNotEmpty() && password.isNotEmpty()) {
+                if (password.length < 6) {
                     Toast.makeText(
                         this,
                         "La contraseña debe contener minimo 6 caracteres",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                if (contrasena == repcontrasena && contrasena.length >= 6) {
+                if (password == repcontrasena && password.length >= 6) {
                     usuarioDAO.crearUsuario(usuario)
+
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this,
+                            OnCompleteListener<AuthResult?> { task ->
+                                if (task.isSuccessful) {
+                                    Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+                                    onBackPressed()
+                                } else {
+                                    Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                                }
+                            })
                     finish()
                     Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
                     onBackPressed()
@@ -55,7 +79,7 @@ class RegistroActivity : AppCompatActivity() {
 
 
                 } else {
-                    if (contrasena != repcontrasena) {
+                    if (password != repcontrasena) {
                         Toast.makeText(this, "Contraseñas no coinciden", Toast.LENGTH_SHORT).show()
                     }
                 }

@@ -1,6 +1,5 @@
 package com.juanorozco.practica5.ui.list
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.juanorozco.practica5.R
 import com.juanorozco.practica5.SesionROOM
-import com.juanorozco.practica5.model.Deudor
-import com.juanorozco.practica5.model.DeudorDAO
+import com.juanorozco.practica5.model.local.Deudor
+import com.juanorozco.practica5.model.local.DeudorDAO
 import androidx.recyclerview.widget.RecyclerView as RecyclerView
 
 class ListFragment : Fragment() {

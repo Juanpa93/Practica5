@@ -2,9 +2,8 @@ package com.juanorozco.practica5
 
 import android.app.Application
 import androidx.room.Room
-import com.juanorozco.practica5.model.DeudorDataBase
-import com.juanorozco.practica5.model.UsuarioDAO
-import com.juanorozco.practica5.model.UsuarioDataBase
+import com.juanorozco.practica5.model.local.DeudorDataBase
+import com.juanorozco.practica5.model.local.UsuarioDataBase
 
 class SesionROOM : Application() {
 
